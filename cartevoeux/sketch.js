@@ -1,14 +1,23 @@
 let kwismas ;
+let img;
+let content="IT'S CHRISTMAS TIME";
+let yStart = 0; 
 const FLOCONS_COUNT= 200;
 const MAXSIZE = 15;
 const COUCHES_COUNT = 5;
 
 const FLOCONS = [];
 
+function preload(){
+  img = loadImage("images/santalol.png");
+
+}
 
 
 function setup() {
   createCanvas(windowWidth,windowHeight);
+  image(img,400,400);
+
   kwismas = circularGradiant(width,height,198, 8, 0,255, 255,255);
   noStroke();
 
@@ -34,13 +43,18 @@ function draw() {
  
   image (kwismas,0,0,width,height);
 
+for(let y = yStart; y< height; y += 28){
   textSize(30);
   textStyle(BOLDITALIC);
   textAlign(CENTER,CENTER);
   fill(34, 120, 15);
-  text("IT'S FUCKING CHRISTMAS",width/2,height/2);
+  text(content,width/2, y);
+
+}
+  yStart--;
+  
  
- 
+
   stroke(255,255,255);
 let counter=0;
 while (counter<100){
@@ -63,7 +77,7 @@ counter++;
         updateFlocons(flocons);
       }
     }
-}
+  }
 
 function updateFlocons(flocons) {
   const diameter = (flocons.c * MAXSIZE) / COUCHES_COUNT;

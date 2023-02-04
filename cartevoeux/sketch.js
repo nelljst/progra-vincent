@@ -1,7 +1,7 @@
 let kwismas ;
 let img;
-let content="IT'S CHRISTMAS TIME";
-let yStart = 0; 
+let manifest="IT'S CHRISTMAS TIME";
+let y = 400; 
 const FLOCONS_COUNT= 200;
 const MAXSIZE = 15;
 const COUCHES_COUNT = 5;
@@ -43,16 +43,16 @@ function draw() {
  
   image (kwismas,0,0,width,height);
 
-for(let y = yStart; y< height; y += 28){
+
   textSize(30);
   textStyle(BOLDITALIC);
   textAlign(CENTER,CENTER);
   fill(34, 120, 15);
-  text(content,width/2, y);
+  text(manifest,width/2, y);
 
-}
-  yStart--;
+
   
+y= y-3
  
 
   stroke(255,255,255);
